@@ -11,9 +11,12 @@
       padding: 0;
       background: linear-gradient(135deg, #f4f7fa 0%, #e0e7ff 100%);
       min-height: 100vh;
+      transition: all 0.3s ease;
+    }
+    body.dark-mode {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     }
 
-    /* Hero Section Styles */
     .hero-section {
       text-align: center;
       padding: 2rem 1rem;
@@ -23,6 +26,9 @@
       border-radius: 15px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       animation: fadeIn 1s ease-in;
+    }
+    body.dark-mode .hero-section {
+      background: rgba(26, 26, 46, 0.95);
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
@@ -35,6 +41,9 @@
       text-transform: uppercase;
       letter-spacing: 2px;
     }
+    body.dark-mode .hero-title {
+      color: #42a5f5;
+    }
     .hero-description {
       color: #333;
       font-size: 1.1rem;
@@ -43,6 +52,9 @@
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+    }
+    body.dark-mode .hero-description {
+      color: #d3d3d3;
     }
     .btn {
       background: linear-gradient(45deg, #1a73e8, #42a5f5);
@@ -61,8 +73,13 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       background: linear-gradient(45deg, #42a5f5, #1a73e8);
     }
+    body.dark-mode .btn {
+      background: linear-gradient(45deg, #42a5f5, #1a73e8);
+    }
+    body.dark-mode .btn:hover {
+      background: linear-gradient(45deg, #1a73e8, #42a5f5);
+    }
 
-    /* Dashboard Styles */
     .dashboard-header {
       display: flex;
       justify-content: space-between;
@@ -70,9 +87,15 @@
       padding-bottom: 1rem;
       border-bottom: 1px solid #e0e0e0;
     }
+    body.dark-mode .dashboard-header {
+      border-bottom: 1px solid #3a3a5a;
+    }
     .dashboard-title {
       font-size: 1.5rem;
       color: #333;
+    }
+    body.dark-mode .dashboard-title {
+      color: #d3d3d3;
     }
     .dashboard-controls {
       display: flex;
@@ -85,11 +108,29 @@
       border-radius: 5px;
       background: #f9f9f9;
       cursor: pointer;
+      color: #333;
+      transition: all 0.3s ease;
     }
-    .dashboard-controls button.theme-toggle {
-      background: #ff4d4d;
+    body.dark-mode .dashboard-controls select,
+    body.dark-mode .dashboard-controls button {
+      background: #2a2a46;
+      border-color: #4a4a6a;
+      color: #d3d3d3;
+    }
+    .dashboard-controls button.active {
+      background: #1a73e8;
       color: white;
+    }
+    body.dark-mode .dashboard-controls button.active {
+      background: #42a5f5;
+    }
+    .dashboard-controls .theme-toggle {
+      background: #ff4d4d;
       border: none;
+      color: white;
+    }
+    body.dark-mode .dashboard-controls .theme-toggle {
+      background: #ff6b6b;
     }
     .dashboard-metrics {
       display: flex;
@@ -104,19 +145,31 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       text-align: center;
     }
+    body.dark-mode .metric-card {
+      background: #2a2a46;
+    }
     .metric-card h3 {
       font-size: 1rem;
       color: #666;
       margin-bottom: 0.5rem;
+    }
+    body.dark-mode .metric-card h3 {
+      color: #a0a0c0;
     }
     .metric-card p {
       font-size: 1.5rem;
       color: #333;
       margin: 0;
     }
+    body.dark-mode .metric-card p {
+      color: #d3d3d3;
+    }
     .metric-card p.change {
       font-size: 0.9rem;
       color: #28a745;
+    }
+    body.dark-mode .metric-card p.change {
+      color: #4caf50;
     }
     .dashboard-charts {
       display: flex;
@@ -131,18 +184,30 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       position: relative;
     }
+    body.dark-mode .chart {
+      background: #2a2a46;
+    }
     .chart h3 {
       font-size: 1rem;
       color: #666;
       margin-bottom: 0.5rem;
+    }
+    body.dark-mode .chart h3 {
+      color: #a0a0c0;
     }
     .chart-placeholder {
       height: 150px;
       background: linear-gradient(90deg, #e6f0fa 50%, #d6e6ff 100%);
       border-radius: 5px;
     }
+    body.dark-mode .chart-placeholder {
+      background: linear-gradient(90deg, #2a4066 50%, #1a2a46 100%);
+    }
     .chart-placeholder.gross-profit {
       background: linear-gradient(90deg, #e6ffed 50%, #d6ffe6 100%);
+    }
+    body.dark-mode .chart-placeholder.gross-profit {
+      background: linear-gradient(90deg, #2a6646 50%, #1a462e 100%);
     }
     .chart select {
       position: absolute;
@@ -151,16 +216,27 @@
       padding: 0.3rem;
       border-radius: 5px;
     }
+    body.dark-mode .chart select {
+      background: #2a2a46;
+      border-color: #4a4a6a;
+      color: #d3d3d3;
+    }
     .dashboard-table {
       background: #fff;
       padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
+    body.dark-mode .dashboard-table {
+      background: #2a2a46;
+    }
     .dashboard-table h3 {
       font-size: 1rem;
       color: #666;
       margin-bottom: 0.5rem;
+    }
+    body.dark-mode .dashboard-table h3 {
+      color: #a0a0c0;
     }
     table {
       width: 100%;
@@ -171,12 +247,21 @@
       text-align: left;
       border-bottom: 1px solid #e0e0e0;
     }
+    body.dark-mode th, body.dark-mode td {
+      border-bottom: 1px solid #4a4a6a;
+    }
     th {
       color: #666;
       font-weight: 500;
     }
+    body.dark-mode th {
+      color: #a0a0c0;
+    }
     td {
       color: #333;
+    }
+    body.dark-mode td {
+      color: #d3d3d3;
     }
   </style>
 </head>
@@ -190,16 +275,16 @@
       <div class="dashboard-header">
         <h2 class="dashboard-title">Financial Health Dashboard</h2>
         <div class="dashboard-controls">
-          <select>
+          <select id="time-filter">
             <option>Last 7 Days</option>
             <option>Last 30 Days</option>
             <option>Last Year</option>
           </select>
-          <button>Income</button>
-          <button>Expenses</button>
-          <button>Cash Flow</button>
-          <button>Financial Ratios</button>
-          <button class="theme-toggle">Toggle Theme</button>
+          <button class="filter-btn" data-filter="income">Income</button>
+          <button class="filter-btn" data-filter="expenses">Expenses</button>
+          <button class="filter-btn" data-filter="cash-flow">Cash Flow</button>
+          <button class="filter-btn" data-filter="ratios">Financial Ratios</button>
+          <button id="theme-toggle" class="theme-toggle">Toggle Theme</button>
         </div>
       </div>
 
@@ -261,5 +346,27 @@
     <p class="hero-description">Features include revenue and gross profit trends, income metrics, and a user-friendly interface. Switch themes and explore detailed financial ratios, cash flow, and expenses.</p>
     <a href="#signup" class="btn">Get Started</a>
   </div>
+
+  <script>
+    // Theme Toggle
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      this.textContent = document.body.classList.contains('dark-mode') ? 'Light Theme' : 'Toggle Theme';
+    });
+
+    // Filter Buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Time Filter (for demonstration, update content as needed)
+    document.getElementById('time-filter').addEventListener('change', function() {
+      console.log('Time filter changed to: ' + this.value);
+    });
+  </script>
 </body>
 </html>
